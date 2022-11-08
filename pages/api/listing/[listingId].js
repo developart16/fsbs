@@ -32,9 +32,10 @@ export default function handler(req, res) {
         description = ""
     } = req.body;
     
-    if ( !startDateTime || !endDateTime ) return res.status(400)
+    if ( !startDateTime || !endDateTime ) return res.status(400);
     
     const listing = listingTemporaryExample.find(_x => _x.listingId === listingId);
+    if ( Boolean(listing) === false ) return res.status(404);
 
     listing.listingBusy.push({
         startDateTime: startDateTime.substring(0,startDateTime.length - 5),
@@ -47,7 +48,8 @@ export default function handler(req, res) {
             endDate: endDateTime
         })
     });
-
+    
+    // TODO: Guardar informacion [en json]?
   
     return res.status(200).json(listing)
   }

@@ -20,7 +20,7 @@ export default function Listing({
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
-  const [description, setDescription] = useState(null);
+  const [description, setDescription] = useState("");
 
   const [messageError, setMessageError] = useState(null);
   const fncCloseMessage = (event, reason)=>{ reason === 'clickaway' && setMessageError(null)}
@@ -59,12 +59,14 @@ export default function Listing({
       })
     })
     const response = await postListing.json()
+    // TODO Mejorar mensaje para poder avisar de success
   }
 
   useEffect(()=>{
 
     setStartDate(null)
     setEndDate(null)
+    setDescription("")
 
   }, [selected]);
 

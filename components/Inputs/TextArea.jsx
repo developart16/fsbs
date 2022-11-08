@@ -1,8 +1,7 @@
 import TextField from '@mui/material/TextField';
 
 export default function TextArea({
-    label,
-    value,
+    value = "",
     onChange = ()=>{},
     defaultValue,
     size = 6,
@@ -15,7 +14,6 @@ export default function TextArea({
       className='listing'
       variant='standard'
       rows={size}
-      label={label}
       multiline={multiline}
       defaultValue={defaultValue}
       value={value}
