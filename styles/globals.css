@@ -24,3 +24,21 @@ a {
     background: black;
   }
 }
+
+
+.flex {
+  display: flex;
+}
+
+.justifyCenter{
+  display: flex;
+  justify-content: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.w100 {
+  width: 100%
+}
